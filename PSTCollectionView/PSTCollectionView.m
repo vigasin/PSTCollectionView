@@ -2074,7 +2074,7 @@ static void PSTCollectionViewCommonSetup(PSTCollectionView *_self) {
             case PSTCollectionUpdateActionDelete: {
                 if (updateItem.isSectionOperation) {
                     // section updates are ignored anyway in animation code. If not commented, mixing rows and section deletion causes crash in else below
-                    // [newModel removeObjectAtIndex:updateItem.indexPathBeforeUpdate.section];
+                    [newModel removeObjectAtIndex:updateItem.indexPathBeforeUpdate.section];
                 }else {
                     [(NSMutableArray *)newModel[updateItem.indexPathBeforeUpdate.section]
                             removeObjectAtIndex:updateItem.indexPathBeforeUpdate.item];
